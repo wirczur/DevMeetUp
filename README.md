@@ -1,4 +1,4 @@
-# DevMeetUp
+# DevMeeting
 
 ## Project setup
 ```
