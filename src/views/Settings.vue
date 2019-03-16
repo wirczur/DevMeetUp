@@ -5,18 +5,17 @@
 </template>
 
 <script>
+
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'Setting',
-  methods: {
-    checkIfUserIsAdmin() {
-      const { localStorage } = window;
-      const isAdmin = localStorage.getItem('isAdmin');
-      return isAdmin === 'true';
-    },
+  computed: {
+    ...mapGetters('user', ['isAdmin']),
   },
   beforeRouteEnter(to, from, next) {
     next((vm) => {
-      if (vm.checkIfUserIsAdmin()) {
+      if (vm.isAdmin) {
         next();
       } else {
         next({

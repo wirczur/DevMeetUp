@@ -3,7 +3,7 @@ const uuidv1 = require('uuid/v1');
 
 const initialState = () => ({
   userId: uuidv1(),
-  isAdmin: false,
+  isAdmin: true,
 });
 
 const state = initialState;
