@@ -1,5 +1,10 @@
 <template>
   <div class="home">
+    <h2>
+      <font :color="settings ? settings.color : 'black'">
+        {{ settings.title }}
+      </font>
+    </h2>
     <label>
       {{ label }}
       <BaseInput
@@ -24,6 +29,7 @@
 // @ is an alias to /src
 import BaseButton from '@/components/BaseButton';
 import BaseInput from '@/components/BaseInput';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Home',
@@ -40,7 +46,14 @@ export default {
       labelButton: 'test',
     };
   },
+  computed: {
+    ...mapGetters('settings', ['settings']),
+  },
+  created() {
+    this.getSettings();
+  },
   methods: {
+    ...mapActions('settings', ['getSettings']),
     changeHandler(value) {
       console.log(value);
     },
