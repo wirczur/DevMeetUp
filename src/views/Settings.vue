@@ -7,17 +7,23 @@
 <script>
 export default {
   name: 'Setting',
-
+  methods: {
+    checkIfUserIsAdmin() {
+      const { localStorage } = window;
+      const isAdmin = localStorage.getItem('isAdmin');
+      return isAdmin === 'true';
+    },
+  },
   beforeRouteEnter(to, from, next) {
-    const { localStorage } = window;
-    const isAdmin = localStorage.getItem('isAdmin') === 'true';
-    if (isAdmin) {
-      next();
-    } else {
-      next({
-        name: 'home',
-      });
-    }
+    next((vm) => {
+      if (vm.checkIfUserIsAdmin()) {
+        next();
+      } else {
+        next({
+          name: 'home',
+        });
+      }
+    });
   },
 };
 
