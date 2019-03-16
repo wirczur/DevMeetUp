@@ -11,7 +11,11 @@
       :loading="clickButton"
       :label="labelButton"
       @click="clickHandler"
-    />
+    >
+      <template v-slot:header="test">
+        Custom header
+      </template>
+    </BaseButton>
   </div>
 </template>
 

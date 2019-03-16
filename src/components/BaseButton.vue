@@ -4,7 +4,9 @@
       :loading="loading"
       @click="clickHandler"
     >
-      {{ label }}
+      <slot name="header">
+        Brak napisu
+      </slot>
     </el-button>
   </div>
 </template>
