@@ -3,6 +3,7 @@
     <label>
       {{ label }}
       <BaseInput
+        :required="required"
         @change="changeHandler"
       />
     </label>
@@ -33,6 +34,7 @@ export default {
   inheritAttrs: false,
   data() {
     return {
+      required: true,
       clickButton: false,
       label: 'Wartość',
       labelButton: 'test',

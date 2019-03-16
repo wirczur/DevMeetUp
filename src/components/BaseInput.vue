@@ -2,7 +2,7 @@
   <div class="base-input">
     <el-input
       v-model="value"
-      v-validate="'required'"
+      v-validate="required ? 'required' : null"
       type="text"
       name="wartosc"
     />
@@ -14,6 +14,10 @@
 export default {
   name: 'BaseInput',
   props: {
+    required: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
