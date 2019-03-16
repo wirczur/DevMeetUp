@@ -18,6 +18,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  components: {},
+  created() {
+    this.$store.dispatch('user/setInitialUserID');
+  },
+};
+</script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
