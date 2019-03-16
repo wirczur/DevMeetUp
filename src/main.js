@@ -3,7 +3,7 @@ import ElementUI from 'element-ui';
 import VeeValidate from 'vee-validate';
 import App from './App';
 import router from './router';
-import store from './store';
+import store from './store/store';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
