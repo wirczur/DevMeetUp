@@ -5,8 +5,8 @@
       name="item"
       :todo-item="element"
     >
-      <el-button @click="clickHandler(todoItem.value)">
-        <i :class="todoItem.icon" />
+      <el-button @click="clickHandler(element.value)">
+        <i :class="element.icon" />
       </el-button>
     </slot>
   </div>
